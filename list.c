@@ -37,7 +37,7 @@ List * createList() {
   }
   return nuevaLista;
 }
-//======================================================================================
+//1======================================================================================
 void * firstList(List * list) {
   if (list != NULL && list->head != NULL) {
       list->current = list->head;
@@ -45,7 +45,7 @@ void * firstList(List * list) {
   }
   return NULL;
 }
-//======================================================================================
+//2======================================================================================
 void * nextList(List * list) {
   if (list != NULL && list->current != NULL && list->current->next != NULL){
       list->current = list->current->next;
@@ -53,7 +53,7 @@ void * nextList(List * list) {
   }
   return NULL;
 }
-//======================================================================================
+//3======================================================================================
 void * lastList(List * list) {
   if(list != NULL && list->tail != NULL){
     list->current = list->tail;
@@ -69,10 +69,10 @@ void * prevList(List * list) {
   }
   return NULL;
 }
-//======================================================================================
+//4======================================================================================
 void pushFront(List * list, void * data) {
   Node *nuevoNodo = createNode(data);
-  if (list != NULL && nuevoNodo != NULL) {
+  if (list != NULL && nuevoNodo != NULL){
     if (list->head == NULL){
       list->head = nuevoNodo;
       list->tail = nuevoNodo;
@@ -82,13 +82,24 @@ void pushFront(List * list, void * data) {
     }
   }
 }
-
+//5======================================================================================
 void pushBack(List * list, void * data) {
     list->current = list->tail;
     pushCurrent(list,data);
 }
 
 void pushCurrent(List * list, void * data) {
+  if (list != NULL){
+    Node *nuevoNodo = createNode(data);
+    if (nuevoNodo != NULL) {
+        nuevoNodo->prev = list->current;
+        if (list->current->next != NULL){
+            list->current->next->prev = nuevoNodo;
+        }else{
+            list->tail = nuevoNodo;
+        }
+    }
+  }
 }
 
 void * popFront(List * list) {
