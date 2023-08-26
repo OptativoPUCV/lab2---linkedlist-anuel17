@@ -129,7 +129,7 @@ void * popCurrent(List * list) {
       list->tail = nodoEliminar->prev;
     }
     list->current = nodoEliminar->next;
-    return data
+    return data;
   }
   return NULL;
 }
