@@ -12,3 +12,9 @@ list.c:35:7: error: expected ‘;’ before ‘nuevaLita’
       |       ^~~~~~~~~
 Compilation failed
 e5f38a3
+Sat 26 Aug 2023 09:01:41 PM UTC: 
+ list.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  1|5
+total_score: 10/70
+3f424e5
