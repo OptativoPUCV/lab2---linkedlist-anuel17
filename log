@@ -24,3 +24,16 @@ Sat 26 Aug 2023 09:02:16 PM UTC:
  tests:  1|5
 total_score: 10/70
 e9e8ab1
+Sat 26 Aug 2023 09:03:33 PM UTC: 
+ list.c | 4 ++++
+ 1 file changed, 4 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘firstList’:
+list.c:43:33: error: expected ‘;’ before ‘return’
+   43 |       list->current = list->head
+      |                                 ^
+      |                                 ;
+   44 |       return list->current->data;
+      |       ~~~~~~                     
+Compilation failed
+e490c2a
