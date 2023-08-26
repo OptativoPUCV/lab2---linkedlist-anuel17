@@ -178,3 +178,16 @@ Sat 26 Aug 2023 10:02:28 PM UTC:
  1 file changed, 7 insertions(+)
  tests:  0|0
 629c69d
+Sat 26 Aug 2023 10:03:18 PM UTC: 
+ list.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+list.c: In function ‘popCurrent’:
+list.c:132:16: error: expected ‘;’ before ‘}’ token
+  132 |     return data
+      |                ^
+      |                ;
+  133 |   }
+      |   ~             
+Compilation failed
+f96922b

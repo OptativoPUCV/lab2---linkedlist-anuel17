@@ -117,6 +117,7 @@ void * popBack(List * list) {
 void * popCurrent(List * list) {
   if (list != NULL && list->current != NULL){
     Node *nodoEliminar = list->current;
+    void *data = nodoEliminar->data;
     if (nodoEliminar->prev != NULL){
       nodoEliminar->prev->next = nodoEliminar->next;
     }else{
@@ -128,7 +129,7 @@ void * popCurrent(List * list) {
       list->tail = nodoEliminar->prev;
     }
     list->current = nodoEliminar->next;
-    
+    return data
   }
   return NULL;
 }
