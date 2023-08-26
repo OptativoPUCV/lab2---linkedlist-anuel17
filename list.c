@@ -122,6 +122,13 @@ void * popCurrent(List * list) {
     }else{
       list->head = nodoEliminar->next;
     }
+    if (nodoEliminar->next != NULL){
+      nodoEliminar->next->prev = nodoEliminar->prev;
+    }else{
+      list->tail = nodoEliminar->prev;
+    }
+    list->current = nodoEliminar->next;
+    
   }
   return NULL;
 }
