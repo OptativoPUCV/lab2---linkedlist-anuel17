@@ -116,9 +116,11 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   if (list != NULL && list->current != NULL){
-    Node *nodeToRemove = list->current;
-    if (nodeToRemove->prev != NULL){
-      nodeToRemove->prev->next = nodeToRemove->next;
+    Node *nodoEliminar = list->current;
+    if (nodoEliminar->prev != NULL){
+      nodoEliminar->prev->next = nodoEliminar->next;
+    }else{
+      list->head = nodoEliminar->next;
     }
   }
   return NULL;
