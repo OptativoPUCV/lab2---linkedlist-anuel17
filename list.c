@@ -103,7 +103,7 @@ void pushCurrent(List * list, void * data) {
     }
   }
 }
-
+//6======================================================================================
 void * popFront(List * list) {
     list->current = list->head;
     return popCurrent(list);
